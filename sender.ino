@@ -51,11 +51,7 @@ void setup() {
 }
  
 void loop() {
-  // Set values to send
-  if (Serial.available() > 0) {
-    char msg = Serial.readString()[0];
-    strcpy(myData.a, &msg);
-  }
+    strcpy(myData.a, "TEST");
   
   // Send message via ESP-NOW
   esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &myData, sizeof(myData));
